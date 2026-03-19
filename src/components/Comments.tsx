@@ -4,11 +4,14 @@ import { useEffect, useRef } from 'react'
 
 export default function Comments() {
   const ref = useRef<HTMLDivElement>(null)
+  const injected = useRef(false)
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         if (entries[0].isIntersecting) {
+          if (injected.current) return
+          injected.current = true
           const script = document.createElement('script')
           script.src = 'https://giscus.app/client.js'
           script.setAttribute('data-repo', process.env.NEXT_PUBLIC_GISCUS_REPO || '')
@@ -28,7 +31,7 @@ export default function Comments() {
           observer.disconnect()
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0 }
     )
 
     if (ref.current) observer.observe(ref.current)
