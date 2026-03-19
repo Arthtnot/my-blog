@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 440" font-family="'PingFang SC', 'Helvetica Neue', Arial, sans-serif">
+  <defs>
+    <marker id="axisarrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#999"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#00000018"/>
+    </filter>
+  </defs>
+
+  <rect width="700" height="440" fill="#fafaf8" rx="12"/>
+  <text x="350" y="30" text-anchor="middle" fill="#333" font-size="15" font-weight="600">框架定位对比</text>
+
+  <!-- Axes -->
+  <line x1="80" y1="360" x2="620" y2="360" stroke="#bbb" stroke-width="1.5" marker-end="url(#axisarrow)"/>
+  <line x1="80" y1="360" x2="80" y2="60" stroke="#bbb" stroke-width="1.5" marker-end="url(#axisarrow)"/>
+
+  <!-- Axis labels -->
+  <text x="350" y="400" text-anchor="middle" fill="#888" font-size="12">文档化程度</text>
+  <text x="50" y="350" text-anchor="middle" fill="#888" font-size="11">低</text>
+  <text x="610" y="350" text-anchor="middle" fill="#888" font-size="11">高</text>
+
+  <!-- Y axis label (rotated) -->
+  <text transform="rotate(-90)" x="-210" y="28" text-anchor="middle" fill="#888" font-size="12">执行约束强度</text>
+  <text x="52" y="70" text-anchor="middle" fill="#888" font-size="11">高</text>
+  <text x="52" y="358" text-anchor="middle" fill="#888" font-size="11">低</text>
+
+  <!-- Grid lines (faint) -->
+  <line x1="80" y1="210" x2="615" y2="210" stroke="#eee" stroke-width="1" stroke-dasharray="4,4"/>
+  <line x1="350" y1="60" x2="350" y2="360" stroke="#eee" stroke-width="1" stroke-dasharray="4,4"/>
+
+  <!-- Zone background labels -->
+  <text x="200" y="310" text-anchor="middle" fill="#ddd" font-size="28" font-weight="800">低约束</text>
+  <text x="500" y="310" text-anchor="middle" fill="#ddd" font-size="28" font-weight="800">文档化</text>
+  <text x="200" y="130" text-anchor="middle" fill="#ddd" font-size="28" font-weight="800">约束</text>
+  <text x="500" y="130" text-anchor="middle" fill="#ddd" font-size="28" font-weight="800">理想区</text>
+
+  <!-- Point 1: 无 spec 开发 -->
+  <circle cx="140" cy="330" r="22" fill="#e05c5c" opacity="0.2" filter="url(#shadow)"/>
+  <circle cx="140" cy="330" r="10" fill="#e05c5c"/>
+  <text x="140" y="310" text-anchor="middle" fill="#c0392b" font-size="12" font-weight="600">无 spec 开发</text>
+  <text x="140" y="380" text-anchor="middle" fill="#c0392b" font-size="10">自由发挥</text>
+  <text x="140" y="393" text-anchor="middle" fill="#c0392b" font-size="10">无文档无约束</text>
+
+  <!-- Point 2: 普通 spec 开发 -->
+  <circle cx="430" cy="295" r="22" fill="#e07b2a" opacity="0.2" filter="url(#shadow)"/>
+  <circle cx="430" cy="295" r="10" fill="#e07b2a"/>
+  <text x="430" y="275" text-anchor="middle" fill="#b85e1a" font-size="12" font-weight="600">普通 spec 开发</text>
+  <text x="430" y="378" text-anchor="middle" fill="#b85e1a" font-size="10">有文档</text>
+  <text x="430" y="391" text-anchor="middle" fill="#b85e1a" font-size="10">但执行靠自觉</text>
+
+  <!-- Point 3: OpenSpec -->
+  <circle cx="540" cy="230" r="22" fill="#8e6dbf" opacity="0.2" filter="url(#shadow)"/>
+  <circle cx="540" cy="230" r="10" fill="#8e6dbf"/>
+  <text x="600" y="220" text-anchor="middle" fill="#6a4a9e" font-size="12" font-weight="600">OpenSpec</text>
+  <text x="600" y="236" text-anchor="middle" fill="#6a4a9e" font-size="11">"fluid not rigid"</text>
+  <text x="600" y="252" text-anchor="middle" fill="#6a4a9e" font-size="10">协作文档化层</text>
+  <!-- Dotted line to label -->
+  <line x1="551" y1="230" x2="560" y2="228" stroke="#8e6dbf" stroke-width="1" stroke-dasharray="2,2"/>
+
+  <!-- Point 4: superpowers -->
+  <circle cx="490" cy="110" r="30" fill="#4a90d9" opacity="0.15" filter="url(#shadow)"/>
+  <circle cx="490" cy="110" r="16" fill="#4a90d9" opacity="0.3"/>
+  <circle cx="490" cy="110" r="8" fill="#4a90d9"/>
+  <text x="490" y="82" text-anchor="middle" fill="#1a6fb5" font-size="13" font-weight="700">superpowers</text>
+  <rect x="370" y="148" width="240" height="48" rx="6" fill="#e8f1fb" stroke="#4a90d9" stroke-width="1"/>
+  <text x="490" y="166" text-anchor="middle" fill="#1a6fb5" font-size="11" font-weight="600">执行控制层</text>
+  <text x="490" y="182" text-anchor="middle" fill="#1a6fb5" font-size="10">高文档化 + 强制执行约束</text>
+
+  <!-- Arrow connecting OpenSpec and superpowers -->
+  <path d="M540,218 Q515,165 490,145" stroke="#999" stroke-width="1" fill="none" stroke-dasharray="3,3" marker-end="url(#axisarrow)"/>
+  <text x="505" y="182" fill="#999" font-size="10" transform="rotate(-55,505,182)">可组合</text>
+</svg>

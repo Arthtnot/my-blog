@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 380" font-family="'PingFang SC', 'Helvetica Neue', Arial, sans-serif">
+  <defs>
+    <marker id="arrow-down" markerWidth="8" markerHeight="8" refX="4" refY="6" orient="auto">
+      <path d="M0,0 L8,0 L4,8 z" fill="#666"/>
+    </marker>
+    <marker id="arrow-up" markerWidth="8" markerHeight="8" refX="4" refY="2" orient="auto">
+      <path d="M0,8 L8,8 L4,0 z" fill="#27ae60"/>
+    </marker>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#00000018"/>
+    </filter>
+  </defs>
+
+  <rect width="780" height="380" fill="#fafaf8" rx="12"/>
+  <text x="390" y="30" text-anchor="middle" fill="#333" font-size="15" font-weight="600">Subagent 独立执行架构</text>
+
+  <!-- Main Agent -->
+  <rect x="265" y="52" width="250" height="72" rx="10" fill="#e8f1fb" stroke="#4a90d9" stroke-width="2" filter="url(#shadow)"/>
+  <text x="390" y="80" text-anchor="middle" fill="#1a6fb5" font-size="14" font-weight="600">主 Agent</text>
+  <text x="390" y="100" text-anchor="middle" fill="#1a6fb5" font-size="11">持有计划 + 分发任务</text>
+  <text x="390" y="115" text-anchor="middle" fill="#4a90d9" font-size="10" opacity="0.8">session 上下文保持</text>
+
+  <!-- Dispatch arrows (down) -->
+  <line x1="200" y1="124" x2="130" y2="180" stroke="#666" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrow-down)"/>
+  <line x1="320" y1="124" x2="320" y2="180" stroke="#666" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrow-down)"/>
+  <line x1="460" y1="124" x2="460" y2="180" stroke="#666" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrow-down)"/>
+  <line x1="580" y1="124" x2="650" y2="180" stroke="#666" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrow-down)"/>
+
+  <!-- Dispatch labels -->
+  <text x="390" y="155" text-anchor="middle" fill="#999" font-size="10">精确传递上下文（无历史包袱）</text>
+
+  <!-- Subagent 1: Task execution -->
+  <rect x="30" y="182" width="180" height="80" rx="8" fill="#fff5e8" stroke="#e07b2a" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="120" y="205" text-anchor="middle" fill="#b85e1a" font-size="12" font-weight="600">执行 Subagent</text>
+  <text x="120" y="223" text-anchor="middle" fill="#b85e1a" font-size="11">实现具体任务</text>
+  <text x="120" y="240" text-anchor="middle" fill="#b85e1a" font-size="10" opacity="0.8">新鲜上下文 · 无偏见</text>
+  <text x="120" y="255" text-anchor="middle" fill="#b85e1a" font-size="10" font-weight="600">× 不知道历史决策</text>
+
+  <!-- Subagent 2: Spec review -->
+  <rect x="235" y="182" width="170" height="80" rx="8" fill="#f0ebfb" stroke="#8e6dbf" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="320" y="205" text-anchor="middle" fill="#6a4a9e" font-size="12" font-weight="600">Spec 审查员</text>
+  <text x="320" y="223" text-anchor="middle" fill="#6a4a9e" font-size="11">合规性检查</text>
+  <text x="320" y="240" text-anchor="middle" fill="#6a4a9e" font-size="10" opacity="0.8">实现 vs. 规格要求</text>
+  <text x="320" y="255" text-anchor="middle" fill="#6a4a9e" font-size="10" font-weight="600">× 不知道实现过程</text>
+
+  <!-- Subagent 3: Code review -->
+  <rect x="375" y="182" width="170" height="80" rx="8" fill="#fef0f0" stroke="#e05c5c" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="460" y="205" text-anchor="middle" fill="#b83030" font-size="12" font-weight="600">代码审查员</text>
+  <text x="460" y="223" text-anchor="middle" fill="#b83030" font-size="11">质量检查</text>
+  <text x="460" y="240" text-anchor="middle" fill="#b83030" font-size="10" opacity="0.8">只看代码结果</text>
+  <text x="460" y="255" text-anchor="middle" fill="#b83030" font-size="10" font-weight="600">× 不知道"这是我写的"</text>
+
+  <!-- Subagent 4: Debug (parallel) -->
+  <rect x="565" y="182" width="180" height="80" rx="8" fill="#fff5e8" stroke="#e07b2a" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="655" y="205" text-anchor="middle" fill="#b85e1a" font-size="12" font-weight="600">并行调试 Agents</text>
+  <text x="655" y="223" text-anchor="middle" fill="#b85e1a" font-size="11">多个独立问题</text>
+  <text x="655" y="240" text-anchor="middle" fill="#b85e1a" font-size="10" opacity="0.8">并行处理，互不干扰</text>
+  <text x="655" y="255" text-anchor="middle" fill="#b85e1a" font-size="10" font-weight="600">× 边界清晰，不交叉</text>
+
+  <!-- Result arrows (up) -->
+  <line x1="120" y1="262" x2="300" y2="316" stroke="#27ae60" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrow-up)"/>
+  <line x1="320" y1="262" x2="355" y2="316" stroke="#27ae60" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrow-up)"/>
+  <line x1="460" y1="262" x2="425" y2="316" stroke="#27ae60" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrow-up)"/>
+  <line x1="655" y1="262" x2="480" y2="316" stroke="#27ae60" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrow-up)"/>
+
+  <!-- Result gate -->
+  <rect x="270" y="318" width="240" height="44" rx="8" fill="#e8f8ed" stroke="#27ae60" stroke-width="2" filter="url(#shadow)"/>
+  <text x="390" y="340" text-anchor="middle" fill="#1e7e46" font-size="12" font-weight="600">主 Agent 汇总结果</text>
+  <text x="390" y="356" text-anchor="middle" fill="#1e7e46" font-size="11">两阶段审查均通过 → 任务标记完成</text>
+</svg>

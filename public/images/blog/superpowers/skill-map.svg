@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 480" font-family="'PingFang SC', 'Helvetica Neue', Arial, sans-serif">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#00000015"/>
+    </filter>
+  </defs>
+
+  <rect width="860" height="480" fill="#fafaf8" rx="12"/>
+  <text x="430" y="36" text-anchor="middle" fill="#333" font-size="16" font-weight="600" letter-spacing="0.5">superpowers · 14 个 Skill 全景</text>
+
+  <!-- Category 1: 设计与规划 (blue) -->
+  <rect x="30" y="56" width="230" height="170" rx="10" fill="#e8f1fb" stroke="#4a90d9" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect x="30" y="56" width="230" height="32" rx="10" fill="#4a90d9"/>
+  <rect x="30" y="76" width="230" height="12" fill="#4a90d9"/>
+  <text x="145" y="78" text-anchor="middle" fill="white" font-size="13" font-weight="600">设计与规划</text>
+
+  <rect x="50" y="104" width="190" height="30" rx="5" fill="white" stroke="#4a90d9" stroke-width="1"/>
+  <text x="145" y="124" text-anchor="middle" fill="#1a6fb5" font-size="12">brainstorming</text>
+
+  <rect x="50" y="142" width="190" height="30" rx="5" fill="white" stroke="#4a90d9" stroke-width="1"/>
+  <text x="145" y="162" text-anchor="middle" fill="#1a6fb5" font-size="12">writing-plans</text>
+
+  <rect x="50" y="180" width="190" height="30" rx="5" fill="white" stroke="#4a90d9" stroke-width="1"/>
+  <text x="145" y="200" text-anchor="middle" fill="#1a6fb5" font-size="12">using-git-worktrees</text>
+
+  <!-- Category 2: 执行 (purple) -->
+  <rect x="310" y="56" width="230" height="206" rx="10" fill="#f0ebfb" stroke="#8e6dbf" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect x="310" y="56" width="230" height="32" rx="10" fill="#8e6dbf"/>
+  <rect x="310" y="76" width="230" height="12" fill="#8e6dbf"/>
+  <text x="425" y="78" text-anchor="middle" fill="white" font-size="13" font-weight="600">执行</text>
+
+  <rect x="330" y="104" width="190" height="30" rx="5" fill="white" stroke="#8e6dbf" stroke-width="1"/>
+  <text x="425" y="124" text-anchor="middle" fill="#6a4a9e" font-size="12">subagent-driven-development</text>
+
+  <rect x="330" y="142" width="190" height="30" rx="5" fill="white" stroke="#8e6dbf" stroke-width="1"/>
+  <text x="425" y="162" text-anchor="middle" fill="#6a4a9e" font-size="12">executing-plans</text>
+
+  <rect x="330" y="180" width="190" height="30" rx="5" fill="white" stroke="#8e6dbf" stroke-width="1"/>
+  <text x="425" y="200" text-anchor="middle" fill="#6a4a9e" font-size="12">finishing-a-development-branch</text>
+
+  <!-- Category 3: 测试与验证 (green) -->
+  <rect x="590" y="56" width="240" height="170" rx="10" fill="#e8f8ed" stroke="#27ae60" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect x="590" y="56" width="240" height="32" rx="10" fill="#27ae60"/>
+  <rect x="590" y="76" width="240" height="12" fill="#27ae60"/>
+  <text x="710" y="78" text-anchor="middle" fill="white" font-size="13" font-weight="600">测试与验证</text>
+
+  <rect x="610" y="104" width="200" height="30" rx="5" fill="white" stroke="#27ae60" stroke-width="1"/>
+  <text x="710" y="124" text-anchor="middle" fill="#1e7e46" font-size="12">test-driven-development</text>
+
+  <rect x="610" y="142" width="200" height="30" rx="5" fill="white" stroke="#27ae60" stroke-width="1"/>
+  <text x="710" y="162" text-anchor="middle" fill="#1e7e46" font-size="11.5">verification-before-completion</text>
+
+  <!-- Category 4: 调试 (orange) -->
+  <rect x="30" y="272" width="370" height="170" rx="10" fill="#fff5e8" stroke="#e07b2a" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect x="30" y="272" width="370" height="32" rx="10" fill="#e07b2a"/>
+  <rect x="30" y="292" width="370" height="12" fill="#e07b2a"/>
+  <text x="215" y="294" text-anchor="middle" fill="white" font-size="13" font-weight="600">调试</text>
+
+  <rect x="50" y="320" width="155" height="30" rx="5" fill="white" stroke="#e07b2a" stroke-width="1"/>
+  <text x="127" y="340" text-anchor="middle" fill="#b85e1a" font-size="12">systematic-debugging</text>
+
+  <rect x="225" y="320" width="155" height="30" rx="5" fill="white" stroke="#e07b2a" stroke-width="1"/>
+  <text x="302" y="340" text-anchor="middle" fill="#b85e1a" font-size="11.5">dispatching-parallel-agents</text>
+
+  <text x="215" y="385" text-anchor="middle" fill="#b85e1a" font-size="11" opacity="0.7">禁止随机修复 · 必须找根因 · 3次失败需质疑架构</text>
+
+  <!-- Category 5: 代码评审 + 框架 (split) -->
+  <!-- Code Review (red) -->
+  <rect x="450" y="272" width="190" height="170" rx="10" fill="#fef0f0" stroke="#e05c5c" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect x="450" y="272" width="190" height="32" rx="10" fill="#e05c5c"/>
+  <rect x="450" y="292" width="190" height="12" fill="#e05c5c"/>
+  <text x="545" y="294" text-anchor="middle" fill="white" font-size="13" font-weight="600">代码评审</text>
+
+  <rect x="467" y="320" width="156" height="30" rx="5" fill="white" stroke="#e05c5c" stroke-width="1"/>
+  <text x="545" y="340" text-anchor="middle" fill="#b83030" font-size="12">requesting-code-review</text>
+
+  <rect x="467" y="358" width="156" height="30" rx="5" fill="white" stroke="#e05c5c" stroke-width="1"/>
+  <text x="545" y="378" text-anchor="middle" fill="#b83030" font-size="12">receiving-code-review</text>
+
+  <!-- Framework (gray) -->
+  <rect x="660" y="272" width="170" height="170" rx="10" fill="#f4f4f4" stroke="#888" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect x="660" y="272" width="170" height="32" rx="10" fill="#666"/>
+  <rect x="660" y="292" width="170" height="12" fill="#666"/>
+  <text x="745" y="294" text-anchor="middle" fill="white" font-size="13" font-weight="600">框架</text>
+
+  <rect x="676" y="320" width="138" height="30" rx="5" fill="white" stroke="#888" stroke-width="1"/>
+  <text x="745" y="340" text-anchor="middle" fill="#444" font-size="12">using-superpowers</text>
+
+  <rect x="676" y="358" width="138" height="30" rx="5" fill="white" stroke="#888" stroke-width="1"/>
+  <text x="745" y="378" text-anchor="middle" fill="#444" font-size="12">writing-skills</text>
+
+  <!-- Footer -->
+  <text x="430" y="464" text-anchor="middle" fill="#999" font-size="11">所有 Skill 共同构成闭环：设计 → 规划 → 执行 → 验证 → 评审 → 收尾</text>
+</svg>

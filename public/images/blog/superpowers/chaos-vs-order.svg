@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" font-family="'PingFang SC', 'Helvetica Neue', Arial, sans-serif">
+  <defs>
+    <marker id="arrow-chaos" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#e05c5c"/>
+    </marker>
+    <marker id="arrow-order" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#4a90d9"/>
+    </marker>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#00000018"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="420" fill="#fafaf8" rx="12"/>
+
+  <!-- Left panel: Chaos -->
+  <rect x="20" y="20" width="400" height="380" fill="#fff5f5" rx="10" filter="url(#shadow)"/>
+  <text x="220" y="52" text-anchor="middle" fill="#c0392b" font-size="15" font-weight="600" letter-spacing="1">无约束的 AI 开发</text>
+
+  <!-- Chaotic nodes -->
+  <rect x="155" y="70" width="120" height="36" rx="6" fill="#e05c5c" opacity="0.15" stroke="#e05c5c" stroke-width="1.5"/>
+  <text x="215" y="93" text-anchor="middle" fill="#c0392b" font-size="13">收到需求</text>
+
+  <rect x="60" y="145" width="110" height="36" rx="6" fill="#e05c5c" opacity="0.15" stroke="#e05c5c" stroke-width="1.5"/>
+  <text x="115" y="168" text-anchor="middle" fill="#c0392b" font-size="13">立刻写代码</text>
+
+  <rect x="260" y="145" width="110" height="36" rx="6" fill="#e05c5c" opacity="0.15" stroke="#e05c5c" stroke-width="1.5"/>
+  <text x="315" y="168" text-anchor="middle" fill="#c0392b" font-size="13">跳过设计</text>
+
+  <rect x="60" y="230" width="110" height="36" rx="6" fill="#e05c5c" opacity="0.15" stroke="#e05c5c" stroke-width="1.5"/>
+  <text x="115" y="253" text-anchor="middle" fill="#c0392b" font-size="13">随机尝试修复</text>
+
+  <rect x="260" y="230" width="110" height="36" rx="6" fill="#e05c5c" opacity="0.15" stroke="#e05c5c" stroke-width="1.5"/>
+  <text x="315" y="253" text-anchor="middle" fill="#c0392b" font-size="13">跳过测试</text>
+
+  <rect x="130" y="315" width="150" height="36" rx="6" fill="#e05c5c" opacity="0.25" stroke="#e05c5c" stroke-width="1.5"/>
+  <text x="205" y="334" text-anchor="middle" fill="#c0392b" font-size="13" font-weight="600">说"完成了" ✗</text>
+  <text x="205" y="349" text-anchor="middle" fill="#c0392b" font-size="11">(没有验证)</text>
+
+  <!-- Chaotic arrows -->
+  <path d="M215,106 L155,145" stroke="#e05c5c" stroke-width="1.5" fill="none" marker-end="url(#arrow-chaos)"/>
+  <path d="M215,106 L280,145" stroke="#e05c5c" stroke-width="1.5" fill="none" marker-end="url(#arrow-chaos)"/>
+  <path d="M115,181 L115,230" stroke="#e05c5c" stroke-width="1.5" fill="none" marker-end="url(#arrow-chaos)"/>
+  <path d="M315,181 L315,230" stroke="#e05c5c" stroke-width="1.5" fill="none" marker-end="url(#arrow-chaos)"/>
+  <path d="M115,266 L175,315" stroke="#e05c5c" stroke-width="1.5" fill="none" marker-end="url(#arrow-chaos)"/>
+  <path d="M315,266 L235,315" stroke="#e05c5c" stroke-width="1.5" fill="none" marker-end="url(#arrow-chaos)"/>
+  <!-- Loop back arrow (chaos) -->
+  <path d="M115,230 Q40,200 115,181" stroke="#e05c5c" stroke-width="1.5" fill="none" stroke-dasharray="4,3" marker-end="url(#arrow-chaos)"/>
+  <text x="38" y="208" fill="#e05c5c" font-size="10">反复</text>
+
+  <!-- Right panel: Order -->
+  <rect x="480" y="20" width="400" height="380" fill="#f0f7ff" rx="10" filter="url(#shadow)"/>
+  <text x="680" y="52" text-anchor="middle" fill="#1a6fb5" font-size="15" font-weight="600" letter-spacing="1">superpowers 流水线</text>
+
+  <!-- Ordered nodes -->
+  <rect x="590" y="68" width="180" height="34" rx="6" fill="#4a90d9" opacity="0.15" stroke="#4a90d9" stroke-width="1.5"/>
+  <text x="680" y="90" text-anchor="middle" fill="#1a6fb5" font-size="13">brainstorming 设计确认</text>
+
+  <rect x="590" y="130" width="180" height="34" rx="6" fill="#4a90d9" opacity="0.15" stroke="#4a90d9" stroke-width="1.5"/>
+  <text x="680" y="152" text-anchor="middle" fill="#1a6fb5" font-size="13">writing-plans 任务拆解</text>
+
+  <rect x="590" y="192" width="180" height="34" rx="6" fill="#4a90d9" opacity="0.15" stroke="#4a90d9" stroke-width="1.5"/>
+  <text x="680" y="214" text-anchor="middle" fill="#1a6fb5" font-size="13">subagent 独立执行</text>
+
+  <rect x="590" y="254" width="180" height="34" rx="6" fill="#4a90d9" opacity="0.15" stroke="#4a90d9" stroke-width="1.5"/>
+  <text x="680" y="276" text-anchor="middle" fill="#1a6fb5" font-size="13">Spec 合规 + 代码质量审查</text>
+
+  <rect x="590" y="316" width="180" height="36" rx="6" fill="#27ae60" opacity="0.2" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="680" y="335" text-anchor="middle" fill="#1e7e46" font-size="13" font-weight="600">有证据地完成 ✓</text>
+  <text x="680" y="350" text-anchor="middle" fill="#1e7e46" font-size="11">(验证通过)</text>
+
+  <!-- Check marks at gates -->
+  <circle cx="780" cy="85" r="10" fill="#27ae60" opacity="0.2"/>
+  <text x="780" y="90" text-anchor="middle" fill="#1e7e46" font-size="13">✓</text>
+  <circle cx="780" cy="147" r="10" fill="#27ae60" opacity="0.2"/>
+  <text x="780" y="152" text-anchor="middle" fill="#1e7e46" font-size="13">✓</text>
+  <circle cx="780" cy="209" r="10" fill="#27ae60" opacity="0.2"/>
+  <text x="780" y="214" text-anchor="middle" fill="#1e7e46" font-size="13">✓</text>
+  <circle cx="780" cy="271" r="10" fill="#27ae60" opacity="0.2"/>
+  <text x="780" y="276" text-anchor="middle" fill="#1e7e46" font-size="13">✓</text>
+
+  <!-- Ordered arrows -->
+  <line x1="680" y1="102" x2="680" y2="130" stroke="#4a90d9" stroke-width="1.5" marker-end="url(#arrow-order)"/>
+  <line x1="680" y1="164" x2="680" y2="192" stroke="#4a90d9" stroke-width="1.5" marker-end="url(#arrow-order)"/>
+  <line x1="680" y1="226" x2="680" y2="254" stroke="#4a90d9" stroke-width="1.5" marker-end="url(#arrow-order)"/>
+  <line x1="680" y1="288" x2="680" y2="316" stroke="#4a90d9" stroke-width="1.5" marker-end="url(#arrow-order)"/>
+
+  <!-- Center divider -->
+  <line x1="450" y1="30" x2="450" y2="390" stroke="#ddd" stroke-width="1.5" stroke-dasharray="6,4"/>
+
+  <!-- Labels at bottom -->
+  <text x="220" y="408" text-anchor="middle" fill="#c0392b" font-size="12" opacity="0.8">随机、不可预期</text>
+  <text x="680" y="408" text-anchor="middle" fill="#1a6fb5" font-size="12" opacity="0.8">可预期、有验收标准</text>
+</svg>

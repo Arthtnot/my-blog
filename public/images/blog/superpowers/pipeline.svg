@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 280" font-family="'PingFang SC', 'Helvetica Neue', Arial, sans-serif">
+  <defs>
+    <marker id="arrowhead" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#4a90d9"/>
+    </marker>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#00000015"/>
+    </filter>
+  </defs>
+
+  <rect width="900" height="280" fill="#fafaf8" rx="12"/>
+  <text x="450" y="30" text-anchor="middle" fill="#333" font-size="15" font-weight="600" letter-spacing="0.5">完整开发生命周期</text>
+
+  <!-- Stage boxes -->
+  <!-- Stage 1 -->
+  <rect x="20" y="55" width="108" height="80" rx="8" fill="#e8f1fb" stroke="#4a90d9" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="74" y="82" text-anchor="middle" fill="#1a6fb5" font-size="11" font-weight="600">① 需求</text>
+  <text x="74" y="100" text-anchor="middle" fill="#1a6fb5" font-size="10">用户提出</text>
+  <text x="74" y="116" text-anchor="middle" fill="#1a6fb5" font-size="10">功能需求</text>
+
+  <!-- Arrow 1 -->
+  <line x1="128" y1="95" x2="148" y2="95" stroke="#4a90d9" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+
+  <!-- Stage 2 -->
+  <rect x="148" y="55" width="108" height="80" rx="8" fill="#e8f1fb" stroke="#4a90d9" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="202" y="82" text-anchor="middle" fill="#1a6fb5" font-size="11" font-weight="600">② 设计</text>
+  <text x="202" y="100" text-anchor="middle" fill="#1a6fb5" font-size="10">brainstorming</text>
+  <text x="202" y="116" text-anchor="middle" fill="#1a6fb5" font-size="10">用户确认</text>
+
+  <!-- Arrow 2 -->
+  <line x1="256" y1="95" x2="276" y2="95" stroke="#4a90d9" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+
+  <!-- Stage 3 -->
+  <rect x="276" y="55" width="108" height="80" rx="8" fill="#f0ebfb" stroke="#8e6dbf" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="330" y="82" text-anchor="middle" fill="#6a4a9e" font-size="11" font-weight="600">③ 隔离</text>
+  <text x="330" y="100" text-anchor="middle" fill="#6a4a9e" font-size="10">git worktree</text>
+  <text x="330" y="116" text-anchor="middle" fill="#6a4a9e" font-size="10">基线测试</text>
+
+  <!-- Arrow 3 -->
+  <line x1="384" y1="95" x2="404" y2="95" stroke="#4a90d9" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+
+  <!-- Stage 4 -->
+  <rect x="404" y="55" width="108" height="80" rx="8" fill="#f0ebfb" stroke="#8e6dbf" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="458" y="82" text-anchor="middle" fill="#6a4a9e" font-size="11" font-weight="600">④ 规划</text>
+  <text x="458" y="100" text-anchor="middle" fill="#6a4a9e" font-size="10">writing-plans</text>
+  <text x="458" y="116" text-anchor="middle" fill="#6a4a9e" font-size="10">2-5min 粒度</text>
+
+  <!-- Arrow 4 -->
+  <line x1="512" y1="95" x2="532" y2="95" stroke="#4a90d9" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+
+  <!-- Stage 5 (execution loop) -->
+  <rect x="532" y="40" width="180" height="110" rx="8" fill="#fff5e8" stroke="#e07b2a" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="622" y="62" text-anchor="middle" fill="#b85e1a" font-size="11" font-weight="600">⑤ 执行循环</text>
+  <rect x="548" y="72" width="148" height="24" rx="4" fill="white" stroke="#e07b2a" stroke-width="1"/>
+  <text x="622" y="88" text-anchor="middle" fill="#b85e1a" font-size="10">subagent 执行任务</text>
+  <rect x="548" y="102" width="148" height="24" rx="4" fill="white" stroke="#e07b2a" stroke-width="1"/>
+  <text x="622" y="118" text-anchor="middle" fill="#b85e1a" font-size="10">Spec审查 + 质量审查 ✓</text>
+  <!-- Loop indicator -->
+  <path d="M712 95 Q730 95 730 130 Q730 155 622 155 Q514 155 514 130 Q514 95 532 95" stroke="#e07b2a" stroke-width="1.5" fill="none" stroke-dasharray="4,3"/>
+  <text x="622" y="170" text-anchor="middle" fill="#b85e1a" font-size="10" opacity="0.8">循环至所有任务完成</text>
+
+  <!-- Arrow 5 -->
+  <line x1="712" y1="95" x2="736" y2="95" stroke="#4a90d9" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+
+  <!-- Stage 6 -->
+  <rect x="736" y="55" width="108" height="80" rx="8" fill="#e8f8ed" stroke="#27ae60" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="790" y="82" text-anchor="middle" fill="#1e7e46" font-size="11" font-weight="600">⑥ 收尾</text>
+  <text x="790" y="100" text-anchor="middle" fill="#1e7e46" font-size="10">测试全通过</text>
+  <text x="790" y="116" text-anchor="middle" fill="#1e7e46" font-size="10">合并 / PR / 保留</text>
+
+  <!-- TDD and Verification labels running below -->
+  <rect x="20" y="210" width="868" height="50" rx="8" fill="#f8f8f8" stroke="#ddd" stroke-width="1"/>
+  <text x="450" y="229" text-anchor="middle" fill="#555" font-size="11" font-weight="600">贯穿全程</text>
+  <text x="224" y="250" text-anchor="middle" fill="#27ae60" font-size="11">TDD：先写失败测试，再写实现</text>
+  <line x1="440" y1="218" x2="440" y2="255" stroke="#ddd" stroke-width="1"/>
+  <text x="650" y="250" text-anchor="middle" fill="#4a90d9" font-size="11">verification-before-completion：有证据才能声称完成</text>
+</svg>
