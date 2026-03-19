@@ -7,15 +7,12 @@ import SearchModal from './SearchModal'
 export default function Header() {
   const [searchOpen, setSearchOpen] = useState(false)
 
-  // Cmd+K / Ctrl+K to open search
+  // Cmd+K / Ctrl+K: open search
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
       if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
         e.preventDefault()
         setSearchOpen(true)
-      }
-      if (e.key === 'Escape') {
-        setSearchOpen(false)
       }
     }
     window.addEventListener('keydown', handler)
