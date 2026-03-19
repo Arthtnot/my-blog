@@ -9,7 +9,7 @@ interface Props {
 }
 
 function extractHeadings(html: string) {
-  const matches = Array.from(html.matchAll(/<h([23])[^>]*id="([^"]*)"[^>]*>(.*?)<\/h[23]>/g))
+  const matches = Array.from(html.matchAll(/<h([23])[^>]*id="([^"]*)"[^>]*>(.*?)<\/h[23]>/gs))
   return matches.map((m) => ({
     level: Number(m[1]),
     id: m[2],
