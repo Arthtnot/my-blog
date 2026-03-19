@@ -3,6 +3,7 @@ import path from 'path'
 import matter from 'gray-matter'
 import { remark } from 'remark'
 import remarkRehype from 'remark-rehype'
+import rehypeSlug from 'rehype-slug'
 import rehypePrettyCode from 'rehype-pretty-code'
 import rehypeStringify from 'rehype-stringify'
 
@@ -71,6 +72,7 @@ export async function getPostBySlug(slug: string): Promise<Post> {
 
   const processed = await remark()
     .use(remarkRehype)
+    .use(rehypeSlug)
     .use(rehypePrettyCode, {
       theme: 'github-light',
     })
