@@ -29,6 +29,17 @@ function calcReadingTime(content: string): number {
   return Math.max(1, Math.ceil(words / wordsPerMinute))
 }
 
+function fileNameToSlug(fileName: string): string {
+  return fileName.replace(/\.md$/, '').replace(/^\d{4}-\d{2}-\d{2}-/, '')
+}
+
+function findPostFilePath(slug: string): string {
+  const fileNames = fs.readdirSync(postsDirectory)
+  const match = fileNames.find((name) => name.endsWith('.md') && fileNameToSlug(name) === slug)
+  if (!match) throw new Error(`Post not found: ${slug}`)
+  return path.join(postsDirectory, match)
+}
+
 export function getAllPostsMeta(): PostMeta[] {
   if (!fs.existsSync(postsDirectory)) return []
 
@@ -36,7 +47,7 @@ export function getAllPostsMeta(): PostMeta[] {
   const allPosts = fileNames
     .filter((name) => name.endsWith('.md'))
     .map((fileName) => {
-      const slug = fileName.replace(/\.md$/, '')
+      const slug = fileNameToSlug(fileName)
       const fullPath = path.join(postsDirectory, fileName)
       const fileContents = fs.readFileSync(fullPath, 'utf8')
       const { data } = matter(fileContents)
@@ -67,7 +78,7 @@ export function getPostsByTag(tag: string): PostMeta[] {
 }
 
 export async function getPostBySlug(slug: string): Promise<Post> {
-  const fullPath = path.join(postsDirectory, `${slug}.md`)
+  const fullPath = findPostFilePath(slug)
   const fileContents = fs.readFileSync(fullPath, 'utf8')
   const { data, content } = matter(fileContents)
 
