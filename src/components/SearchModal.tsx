@@ -19,7 +19,7 @@ export default function SearchModal({ onClose }: SearchModalProps) {
     fetch('/search-index.json')
       .then((r) => r.json())
       .then((data: SearchDoc[]) => setDocs(data))
-      .catch(() => {})
+      .catch((err) => console.error('Failed to load search index:', err))
     inputRef.current?.focus()
   }, [])
 
@@ -29,6 +29,7 @@ export default function SearchModal({ onClose }: SearchModalProps) {
       if (e.key === 'Escape') onClose()
       if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
         e.preventDefault()
+        e.stopPropagation()
         onClose()
       }
     }
