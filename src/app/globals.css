@@ -74,6 +74,15 @@
   /* Header and main sit above the fixed decorations */
   header { position: relative; z-index: 40; }
 
+  /* Page entrance animation */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  main {
+    animation: fadeUp 0.45s ease-out both;
+  }
+
   /* ── Prose styles ────────────────────────────────────────── */
   .prose h2 {
     @apply text-xl font-bold mt-10 mb-4 text-gray-900;
@@ -120,5 +129,26 @@
     height: 1px;
     background: linear-gradient(to right, transparent, #d1d5db 30%, #d1d5db 70%, transparent);
     margin: 2.5rem 0;
+  }
+
+  /* GFM tables */
+  .prose table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+    margin: 1.75rem 0;
+  }
+  .prose thead tr {
+    background: #f1f5f9;
+    border-bottom: 2px solid #e2e8f0;
+  }
+  .prose th {
+    @apply text-left text-gray-700 font-semibold px-4 py-2;
+  }
+  .prose td {
+    @apply text-gray-600 px-4 py-2 border-b border-gray-100;
+  }
+  .prose tbody tr:hover {
+    background: #f8fafc;
   }
 }
