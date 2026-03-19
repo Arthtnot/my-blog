@@ -13,6 +13,42 @@
     line-height: 1.8;
   }
 
+  /* ── Side margin decorations ────────────────────────────── */
+  body::before,
+  body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: calc((100vw - 64rem) / 2); /* space outside max-w-5xl */
+    pointer-events: none;
+    z-index: 0;
+
+    /* dot matrix pattern */
+    background-image:
+      radial-gradient(circle, #c8d4e8 1px, transparent 1px);
+    background-size: 22px 22px;
+    background-position: center top;
+    opacity: 0.55;
+  }
+
+  body::before {
+    left: 0;
+    -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 100%);
+    mask-image: linear-gradient(to right, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 100%);
+  }
+  body::after {
+    right: 0;
+    -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 100%);
+    mask-image: linear-gradient(to left, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 100%);
+  }
+
+  /* hide on small screens where there's no margin space */
+  @media (max-width: 64rem) {
+    body::before,
+    body::after { display: none; }
+  }
+
   /* Prose styles for article content */
   .prose h2 {
     @apply text-xl font-bold mt-10 mb-4 text-gray-900;
