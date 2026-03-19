@@ -324,6 +324,49 @@ superpowers 做的事情是：
 
 ---
 
+## 与其他方式的对比
+
+### 与普通 Spec 开发模式的区别
+
+很多团队已经在做 spec-first 的开发了：写一份详细的需求文档，然后把文档交给 AI 实现。这个流程也能提升质量，但 superpowers 和它的差别在于——spec 的角色完全不同。
+
+在普通 spec 开发模式里，spec 是**输入**：AI 读完就去实现，后面靠 AI 自觉。有没有遵守 spec、有没有遗漏需求、实现完成没有——都不做强制检查，最后靠人工 review 兜底。
+
+superpowers 里，spec 是**执行合同**，有配套的验收机制：
+
+- **Spec 的来源不同**。它是 brainstorming 这个强制设计对话的产出，不是人凭空写的文档。设计讨论必须发生，用户必须确认，AI 才能进入实现阶段。
+- **Spec 合规性有独立验收**。每个任务完成后，有专门的 reviewer subagent 拿着 spec 对实现做合规检查——"实现是否满足规格要求？有没有多做或少做？"这步不是可选的，是进入下一任务的前置条件。
+- **Spec 被拆成了有约束的任务**。writing-plans 把 spec 翻译成每个 2-5 分钟、有具体文件路径和预期输出的原子任务，不存在"在合适的地方实现"这种模糊性。
+- **每个需求都要有失败测试先行**。TDD 的强制要求让 spec 里的每条需求都必须被翻译成可运行的测试，而不是停留在文档层面。
+
+简单说：普通 spec 开发是给 AI 一份参考文件；superpowers 是给 AI 一份合同，并设置了合同审核员。
+
+---
+
+### 与 OpenSpec 的区别
+
+[OpenSpec](https://github.com/Fission-AI/OpenSpec/) 也是 spec-first 的方向，也在 spec 和实现之间建立了分层结构，但它的设计哲学和 superpowers 恰好相反。
+
+OpenSpec 的核心理念是 **"fluid not rigid"**（流动而非僵化）。它用三个命令（`/opsx:propose` → `/opsx:apply` → `/opsx:archive`）组织每次变更的文档——proposal、specs、design、tasks——让人和 AI 在开始编码前对"要做什么"达成共识。它支持 20+ 种 AI 工具，刻意不锁定平台，也不强制任何中间步骤。
+
+superpowers 的核心理念是：**刚性流程本身就是价值**。它的 1% 规则——"只要有 1% 的可能性某个 Skill 适用，就必须先调用"——是一种强制约束，不是建议。绕过它需要主动抵抗，而不是自然而然地滑过去。
+
+| 维度 | OpenSpec | superpowers |
+|-----|---------|-------------|
+| 核心哲学 | fluid not rigid | 刚性流程是核心价值 |
+| 约束方式 | 文档化，靠 AI 自觉遵守 | 强制 Skill 调用，绕过变困难 |
+| 验证 | 可选的 `/opsx:verify` | 强制验证门，没有新鲜证据不能声称完成 |
+| 多 Agent 架构 | 单 Agent 工作流 | 独立 subagent 实现 + 独立 subagent 评审 |
+| TDD | 不涉及 | 硬约束，必须先看到测试失败 |
+| 调试流程 | 不涉及 | systematic-debugging 专项 Skill |
+| 设计讨论 | 提交 proposal 即可进入实现 | 强制多轮设计对话 + 用户确认 |
+
+两者的边界清晰：**OpenSpec 解决的是协作文档化**，让团队和 AI 在"要做什么"上达成共识；**superpowers 解决的是执行过程控制**，确保 AI 在执行时不偷步骤、不随机修复、不在没有验证的情况下声称完成。
+
+它们不是竞争关系。一个现实的工作流可以是：用 OpenSpec 组织 spec 文档，再用 superpowers 管控执行过程。OpenSpec 负责"说清楚要做什么"，superpowers 负责"保证它被正确地做完"。
+
+---
+
 ## 总结
 
 superpowers 本质上是**一套软件工程方法论的 AI 实现**。它把 TDD、系统性调试、设计评审、验证门关这些工程实践，翻译成了 AI 可以强制执行的 Skill 文件。
