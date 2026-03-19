@@ -2,26 +2,43 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  html {
+    font-family: Georgia, 'Noto Serif SC', serif;
+    color: #1a1a1a;
+    background: #ffffff;
   }
-}
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
+  body {
+    line-height: 1.8;
+  }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  /* Prose styles for article content */
+  .prose h2 {
+    @apply text-xl font-bold mt-10 mb-4 text-gray-900;
+  }
+  .prose h3 {
+    @apply text-lg font-semibold mt-8 mb-3 text-gray-800;
+  }
+  .prose p {
+    @apply mb-5 text-gray-700;
+  }
+  .prose a {
+    @apply text-blue-600 hover:underline;
+  }
+  .prose ul {
+    @apply list-disc list-inside mb-5 text-gray-700;
+  }
+  .prose ol {
+    @apply list-decimal list-inside mb-5 text-gray-700;
+  }
+  .prose blockquote {
+    @apply border-l-4 border-gray-300 pl-4 italic text-gray-600 my-6;
+  }
+  .prose pre {
+    @apply rounded-md overflow-x-auto my-6 text-sm;
+  }
+  .prose code:not(pre code) {
+    @apply bg-gray-100 rounded px-1 py-0.5 text-sm font-mono text-gray-800;
   }
 }
