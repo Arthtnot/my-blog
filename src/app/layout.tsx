@@ -18,7 +18,7 @@ export default function RootLayout({
       <body>
         <ReadingProgress />
         <Header />
-        <main className="max-w-5xl mx-auto px-6 py-10">
+        <main className="w-full lg:w-[80vw] mx-auto px-6 py-10 relative z-10">
           {children}
         </main>
       </body>

@@ -6,50 +6,75 @@
   html {
     font-family: Georgia, 'Noto Serif SC', serif;
     color: #1a1a1a;
-    background: #ffffff;
+    /* slightly warm off-white — easier on the eyes than pure white */
+    background: #fafaf8;
+    scroll-behavior: smooth;
   }
 
   body {
     line-height: 1.8;
   }
 
+  /* Text selection */
+  ::selection {
+    background: #dbeafe;
+    color: #1e3a5f;
+  }
+
+  /* Thin, elegant scrollbar */
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 99px;
+  }
+  ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+
   /* ── Side margin decorations ────────────────────────────── */
+  /* Dots slowly drift downward — seamless loop at background-size */
+  @keyframes dotDrift {
+    from { background-position: center 0; }
+    to   { background-position: center 22px; }
+  }
+
   body::before,
   body::after {
     content: '';
     position: fixed;
     top: 0;
     bottom: 0;
-    width: calc((100vw - 64rem) / 2); /* space outside max-w-5xl */
+    width: 10vw;
     pointer-events: none;
     z-index: 0;
 
-    /* dot matrix pattern */
-    background-image:
-      radial-gradient(circle, #c8d4e8 1px, transparent 1px);
+    background-image: radial-gradient(circle, #b8c8e0 1.2px, transparent 1.2px);
     background-size: 22px 22px;
-    background-position: center top;
     opacity: 0.55;
+
+    animation: dotDrift 7s linear infinite;
   }
 
   body::before {
     left: 0;
-    -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 100%);
-    mask-image: linear-gradient(to right, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 100%);
+    -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,0.65) 20%, rgba(0,0,0,0) 100%);
+    mask-image: linear-gradient(to right, rgba(0,0,0,0.65) 20%, rgba(0,0,0,0) 100%);
   }
   body::after {
     right: 0;
-    -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 100%);
-    mask-image: linear-gradient(to left, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 100%);
+    -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,0.65) 20%, rgba(0,0,0,0) 100%);
+    mask-image: linear-gradient(to left, rgba(0,0,0,0.65) 20%, rgba(0,0,0,0) 100%);
   }
 
-  /* hide on small screens where there's no margin space */
-  @media (max-width: 64rem) {
+  /* Only show side decorations when there's actual margin space */
+  @media (max-width: 1023px) {
     body::before,
     body::after { display: none; }
   }
 
-  /* Prose styles for article content */
+  /* Header and main sit above the fixed decorations */
+  header { position: relative; z-index: 40; }
+
+  /* ── Prose styles ────────────────────────────────────────── */
   .prose h2 {
     @apply text-xl font-bold mt-10 mb-4 text-gray-900;
   }
@@ -68,13 +93,32 @@
   .prose ol {
     @apply list-decimal list-inside mb-5 text-gray-700;
   }
+
+  /* Blockquote — left accent with soft background */
   .prose blockquote {
-    @apply border-l-4 border-gray-300 pl-4 italic text-gray-600 my-6;
+    border-left: 3px solid #93c5fd;
+    background: #f0f7ff;
+    @apply pl-5 pr-4 py-3 italic text-gray-600 my-6 rounded-r;
   }
+
+  /* Code blocks */
   .prose pre {
-    @apply rounded-md overflow-x-auto my-6 text-sm;
+    background: #f3f4f6;
+    border: 1px solid #e5e7eb;
+    @apply rounded-lg overflow-x-auto my-6 text-sm px-5 py-4;
   }
   .prose code:not(pre code) {
-    @apply bg-gray-100 rounded px-1 py-0.5 text-sm font-mono text-gray-800;
+    background: #eff1f5;
+    color: #3b4155;
+    @apply rounded px-1.5 py-0.5 text-sm font-mono;
+  }
+
+  /* Horizontal rule — gradient fade instead of solid line */
+  .prose hr,
+  hr {
+    border: none;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #d1d5db 30%, #d1d5db 70%, transparent);
+    margin: 2.5rem 0;
   }
 }
