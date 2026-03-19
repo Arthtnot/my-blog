@@ -96,7 +96,7 @@ export default function SearchModal({ onClose }: SearchModalProps) {
 
         {query && results.length === 0 && (
           <div className="px-4 py-8 text-center text-sm text-gray-400">
-            没有找到 "{query}" 相关文章
+            没有找到 &ldquo;{query}&rdquo; 相关文章
           </div>
         )}
       </div>
