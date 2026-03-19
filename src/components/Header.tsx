@@ -14,6 +14,9 @@ export default function Header() {
         e.preventDefault()
         setSearchOpen(true)
       }
+      if (e.key === 'Escape') {
+        setSearchOpen(false)
+      }
     }
     window.addEventListener('keydown', handler)
     return () => window.removeEventListener('keydown', handler)
