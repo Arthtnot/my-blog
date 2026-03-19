@@ -21,7 +21,7 @@
 | TypeScript | 类型安全 |
 | Tailwind CSS | 样式 |
 | gray-matter | 解析 Markdown frontmatter |
-| remark + remark-html | Markdown 渲染 |
+| remark + rehype + rehype-pretty-code | Markdown 渲染 + 代码语法高亮（基于 shiki） |
 | flexsearch | 客户端全文搜索索引 |
 | feed | 生成 RSS |
 | Giscus | 基于 GitHub Discussions 的评论系统 |
@@ -129,7 +129,8 @@ blogger/
 ### SearchModal
 
 - 快捷键 `Cmd+K` / `Ctrl+K` 触发
-- 构建时生成 flexsearch 索引（覆盖标题、标签、正文摘要）
+- 构建时在 `lib/search.ts` 中生成 flexsearch 索引数据，序列化为 `public/search-index.json`，客户端启动时 fetch 加载
+- 索引覆盖标题、标签、正文摘要
 - 实时搜索，结果高亮匹配词
 
 ### Comments（Giscus）
@@ -176,6 +177,7 @@ posts/*.md
 - **平台：** Vercel（免费 Hobby 计划）
 - **流程：** 推送到 GitHub main 分支 → Vercel 自动触发构建部署
 - **自定义域名：** 可选，在 Vercel 控制台配置
+- **RSS 静态化：** `/api/feed.xml` Route Handler 需添加 `export const dynamic = 'force-static'`，确保构建时预渲染为静态文件而非运行时 Server Function
 
 ---
 
