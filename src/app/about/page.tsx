@@ -6,6 +6,7 @@ import path from 'path'
 
 async function getAboutContent(): Promise<string> {
   const filePath = path.join(process.cwd(), 'content', 'about.md')
+  if (!fs.existsSync(filePath)) return ''
   const content = fs.readFileSync(filePath, 'utf8')
   const processed = await remark()
     .use(remarkRehype)

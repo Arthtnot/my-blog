@@ -12,7 +12,14 @@ export async function generateStaticParams() {
 }
 
 export default function TagPage({ params }: Props) {
-  const tag = decodeURIComponent(params.tag)
+  const rawTag = params.tag
+  let tag: string
+  try {
+    tag = decodeURIComponent(rawTag)
+  } catch {
+    notFound()
+    tag = rawTag // unreachable, satisfies TypeScript
+  }
   const posts = getPostsByTag(tag)
   if (posts.length === 0) notFound()
 
