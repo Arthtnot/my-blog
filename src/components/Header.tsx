@@ -22,7 +22,7 @@ export default function Header() {
   return (
     <>
       <header className="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-gray-100">
-        <div className="max-w-3xl mx-auto px-6 py-4 flex items-center justify-between">
+        <div className="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
           <Link href="/" className="font-bold text-gray-900 hover:text-blue-600 transition-colors">
             My Blog
           </Link>
